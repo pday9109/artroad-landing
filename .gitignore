@@ -1,0 +1,15 @@
+node_modules/
+.next/
+out/
+.env*
+!.env.example
+*.tsbuildinfo
+reference/docs/*.pdf
+reference/docs/*.png
+reference/docs/*.jpg
+reference/docs/*.jpeg
+
+# Private source material and local QA
+reference/
+docs/
+.DS_Store
