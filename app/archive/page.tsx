@@ -31,7 +31,7 @@ export default function ArchivePage() {
       <a href="#archive-history">선정 이력<span>{String(selections.length).padStart(2, "0")}</span><Arrow diagonal /></a>
     </nav>
     <section className="archive-scenes" id="archive-scenes" aria-labelledby="archive-scenes-title" tabIndex={-1}>
-      <div className="archive-section-heading"><h2 id="archive-scenes-title">공연 현장</h2><p>사진으로 만나는 아트로드의 무대</p></div>
+      <div className="archive-section-heading"><h2 id="archive-scenes-title">공연 현장</h2><p>아트로드가 함께한 무대의 순간들</p></div>
       <div className="archive-scenes-grid">
         {featured && <ArchiveSceneCard entry={featured} featured />}
         <div className="archive-secondary-scenes">{moreScenes.map(entry => <ArchiveSceneCard key={entry.slug} entry={entry} />)}</div>

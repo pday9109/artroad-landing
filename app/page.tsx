@@ -5,6 +5,8 @@ import { Photo } from "@/components/photo";
 import { SectionHeading } from "@/components/section-heading";
 import { Tagline } from "@/components/tagline";
 import { images, site } from "@/content/site";
+import { partners } from "@/content/partners";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -18,7 +20,7 @@ export default function Home() {
         </div>
         <figure className="hero-figure">
           <Photo image={images.hero} sizes="(max-width: 900px) 100vw, 52vw" preload />
-          <figcaption><span>예술가의 무대에서, 시민의 일상으로.</span><span className="image-index">ARTROAD — SCENE 01</span></figcaption>
+          <figcaption><span>강남구 청년 문화예술단체 지원사업</span><span className="image-index">ARTROAD — SCENE 01</span></figcaption>
         </figure>
         <div className="hero-bottom"><span>CULTURE, ARTS & PEOPLE</span><a href="#about">아트로드를 만나다<span aria-hidden="true">↓</span></a></div>
       </section>
@@ -31,7 +33,7 @@ export default function Home() {
           <div className="about-story">
             <figure className="about-photo">
               <Photo className="photo--arch-top-right" image={images.duet} sizes="(max-width: 700px) 100vw, 52vw" />
-              <figcaption>열린 공간에서 함께 나누는 음악</figcaption>
+              <figcaption>강남구 청년 문화예술단체 지원사업</figcaption>
             </figure>
             <div className="about-copy">
               <p>{site.about.description}</p>
@@ -48,6 +50,10 @@ export default function Home() {
               {site.about.values.map((value, index) => <li className="value" key={value}><span aria-hidden="true">0{index + 1}</span><p>{value}</p></li>)}
             </ol>
           </div>
+          <section className="partner-strip" aria-labelledby="partners-title">
+            <div className="partner-strip-heading"><h3 id="partners-title">협력 파트너</h3></div>
+            <ul className="partner-logos">{partners.map(partner => <li key={partner.name}><Image src={partner.logo} alt={partner.name} width={partner.width} height={partner.height} sizes="(max-width: 700px) 22vw, 130px" /></li>)}</ul>
+          </section>
         </div>
       </section>
 
@@ -76,7 +82,7 @@ export default function Home() {
       </section>
 
       <section className="artists section container" id="artists" aria-labelledby="artists-title" tabIndex={-1}>
-        <div className="section-top"><SectionHeading id="artists-title" index="04" eyebrow="PEOPLE OF ARTROAD" title={"서로 다른 예술,\n함께 만드는 하나의 무대."} /><div className="section-aside"><p>배우, 연주자, 무용가와 함께<br />각자의 고유함을 무대 위에 펼칩니다.</p><ActionLink href="#contact" variant="text" diagonal>아티스트 협업 문의</ActionLink></div></div>
+        <div className="section-top"><SectionHeading id="artists-title" index="04" eyebrow="PEOPLE OF ARTROAD" title={"서로 다른 예술,\n함께 만드는 하나의 무대."} /><div className="section-aside"><p>배우, 연주자, 무용가와 함께<br />각자의 고유함을 무대 위에 펼칩니다.</p><div className="artist-section-actions"><ActionLink href="/artists" variant="text" diagonal>아티스트 소개 보기</ActionLink><ActionLink href="#contact" variant="text" diagonal>아티스트 협업 문의</ActionLink></div></div></div>
         <div className="artist-fields">{site.artistFields.map(field => <div className="artist-field" key={field.english}><Tagline compact as="span">{field.english}</Tagline><h3>{field.title}</h3><p>{field.description}</p></div>)}</div>
         {site.artists.length > 0 && <div className="artist-profiles">{site.artists.filter(artist => artist.publicationApproved).map(artist => <article key={artist.name}><Photo image={artist.image} sizes="(max-width: 700px) 100vw, 25vw" /><Tagline compact language="ko">{artist.role}</Tagline><h3>{artist.name}</h3><p>{artist.bio}</p></article>)}</div>}
       </section>

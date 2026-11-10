@@ -93,7 +93,7 @@ section:focus, main:focus { outline: none; }
 .hero-bottom a span { color: var(--indigo); font-size: 20px; }
 
 /* One story: headline, a scene with context, then the three shared values. */
-.about { background: var(--wash); margin-top: 30px; }
+.about { background: var(--wash); margin-top: 30px; padding-bottom: 72px; }
 .about-heading .section-heading h2 { white-space: normal; text-wrap: balance; }
 .about-story { display: grid; grid-template-columns: 1.18fr 1fr; align-items: center; gap: 80px; margin-top: 44px; }
 .about-copy { max-width: 500px; padding-bottom: 24px; }
@@ -560,4 +560,71 @@ section:focus, main:focus { outline: none; }
   .archive-related { margin-top: 44px; }
   .archive-related > div { grid-template-columns: 1fr; gap: 0; }
   .archive-related a { font-size: 16px; }
+}
+
+/* Partner logos from the introduction PDF, set on the same surface. */
+.partner-strip { border-top: 1px solid #d3d9df; margin-top: 46px; padding-top: 27px; }
+.partner-strip-heading { display: flex; align-items: baseline; gap: 22px; }
+.partner-strip-heading h3 { font-size: 15px; letter-spacing: -.035em; font-weight: 650; }
+.partner-strip-heading p { color: var(--muted); font-size: 11px; line-height: 1.5; margin-top: 5px; word-break: keep-all; }
+.partner-logos { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); align-items: center; gap: 8px 22px; margin-top: 18px; }
+.partner-logos li { display: flex; justify-content: center; align-items: center; min-width: 0; height: 72px; overflow: hidden; }
+.partner-logos img { width: auto; max-width: min(100%, 190px); max-height: 55px; height: auto; object-fit: contain; }
+.partner-logos li:nth-child(1) img { transform: scale(1.28); }
+.partner-logos li:nth-child(2) img { transform: scale(2.15); }
+.partner-logos li:nth-child(3) img { transform: scale(1.25); }
+.partner-logos li:nth-child(4) img { flex-shrink: 0; width: min(100%, 230px); max-width: none; max-height: none; height: auto; }
+.partner-logos li:nth-child(8) img { transform: scale(1.25); }
+.artist-section-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 25px; }
+.artists-page { padding-top: 38px; padding-bottom: 94px; }
+.artists-page-header { display: grid; grid-template-columns: .95fr 1fr; gap: 68px; align-items: center; padding-block: 68px 74px; }
+.artists-page-header h1 { font-size: clamp(42px, 4.9vw, 68px); font-weight: 650; line-height: 1.18; letter-spacing: -.06em; margin-top: 26px; word-break: keep-all; }
+.artists-page-header > div > p:not(.tagline) { font-size: 16px; line-height: 1.9; color: var(--muted); margin-top: 26px; word-break: keep-all; }
+.artists-page-header figure { min-width: 0; }
+.artists-directory { border-top: 1px solid var(--line); padding-top: 45px; }
+.artists-directory-heading { display: flex; justify-content: space-between; align-items: baseline; gap: 25px; margin-bottom: 35px; }
+.artists-directory-heading h2 { font-size: 30px; letter-spacing: -.045em; line-height: 1.4; }
+.artists-directory-heading p { font-size: 12px; color: var(--muted); }
+.artists-directory-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 55px; }
+.artist-profile { display: grid; grid-template-columns: minmax(0, 170px) minmax(0, 1fr); gap: 10px 22px; padding: 30px 0 34px; border-top: 1px solid var(--line); }
+.artist-profile-media { grid-row: span 2; min-width: 0; }
+.artist-profile-media .photo { --photo-arch: 38px; }
+.artist-profile-meta { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; padding-top: 10px; color: var(--blue); font-size: 10px; line-height: 1.4; letter-spacing: .06em; }
+.artist-profile-meta span:first-child { color: var(--indigo); font-size: 20px; letter-spacing: -.025em; }
+.artist-profile-intro h3 { font-size: 34px; line-height: 1.3; margin-top: 12px; letter-spacing: -.05em; font-weight: 600; }
+.artist-profile-intro > p { font-size: 14px; color: var(--muted); line-height: 1.8; margin-top: 9px; word-break: keep-all; }
+.artist-profile-credits { grid-column: 2; margin-top: 12px; }
+.artist-profile-credits h4 { font-size: 11px; font-weight: 600; color: var(--blue); margin: 0 0 10px; }
+.artist-profile-credits li { position: relative; padding-left: 12px; color: var(--ink); font-size: 13px; line-height: 1.8; word-break: keep-all; }
+.artist-profile-credits li::before { content: '·'; position: absolute; left: 0; }
+.artists-page-contact { border-top: 1px solid var(--line); margin-top: 45px; padding-top: 35px; display: flex; justify-content: space-between; align-items: center; gap: 25px; }
+.artists-page-contact h2 { font-size: 23px; letter-spacing: -.04em; line-height: 1.4; }
+.artists-page-contact p { font-size: 14px; color: var(--muted); margin-top: 9px; }
+@media (max-width: 1100px) {
+  .partner-logos { gap: 10px 16px; }
+  .artists-page-header { gap: 36px; }
+}
+@media (max-width: 700px) {
+  .partner-strip { margin-top: 36px; padding-top: 22px; }
+  .partner-strip-heading { display: block; }
+  .partner-logos { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px 14px; }
+  .partner-logos li { height: 65px; }
+  .partner-logos img { max-width: min(100%, 145px); max-height: 43px; }
+  .artist-section-actions { display: block; }
+  .artist-section-actions .action-link { margin-top: 12px; }
+  .artists-page { padding-top: 25px; padding-bottom: 68px; }
+  .artists-page-header { grid-template-columns: 1fr; gap: 34px; padding-block: 42px 50px; }
+  .artists-page-header h1 { font-size: 43px; }
+  .artists-page-header > div > p:not(.tagline) { font-size: 15px; margin-top: 20px; }
+  .artists-directory { padding-top: 33px; }
+  .artists-directory-heading { display: block; margin-bottom: 24px; }
+  .artists-directory-heading h2 { font-size: 26px; }
+  .artists-directory-heading p { margin-top: 5px; }
+  .artists-directory-grid { grid-template-columns: 1fr; }
+  .artist-profile { grid-template-columns: 120px minmax(0, 1fr); gap: 12px 16px; padding-block: 26px; }
+  .artist-profile-media { grid-row: auto; }
+  .artist-profile-credits { grid-column: 1 / -1; margin-top: 0; }
+  .artist-profile-intro h3 { font-size: 30px; }
+  .artists-page-contact { display: block; margin-top: 25px; }
+  .artists-page-contact .action-link { margin-top: 18px; }
 }

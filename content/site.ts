@@ -32,6 +32,7 @@ export const navigation = [
   { label: "단체소개", href: "#about" },
   { label: "주요 사업", href: "#business" },
   { label: "아카이브", href: "/archive" },
+  { label: "아티스트", href: "/artists" },
   { label: "공지사항", href: "/notices" },
 ] as const;
 
@@ -56,8 +57,8 @@ export const images = {
 export const site = {
   name: "아트로드",
   slogan: "문화예술로 길을 만듭니다.",
-  description: "청년 문화예술가에게 지속 가능한 무대를, 시민에게 참여와 공감의 자리를. 아트로드의 공연·행사·교육·지역 협력 활동을 만나보세요.",
-  intro: "청년 문화예술가에게 지속 가능한 무대를,\n시민에게 참여와 공감의 자리를 만듭니다.",
+  description: "청년 문화예술가들과 함께 지속가능한 무대와 콘텐츠를 만들어갑니다. 아트로드의 공연·행사·교육·지역 협력 활동을 만나보세요.",
+  intro: "청년 문화예술가들과 함께\n지속가능한 무대와 콘텐츠를 만들어갑니다.",
   about: {
     title: "사람은 누구나\n‘걸작품’입니다.",
     description: "아트로드는 모든 사람이 고유한 재능과 가능성을 지니고 있다고 믿습니다. 문화예술을 통해 그 잠재력을 발견하고, 서로에게 영감을 주며 함께 걷는 길을 만듭니다.",

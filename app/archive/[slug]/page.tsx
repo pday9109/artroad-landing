@@ -35,9 +35,8 @@ export default async function ArchiveDetailPage({ params }: ArchivePageProps) {
       <dl className="archive-facts">{entry.facts.map(fact => <div key={fact.label}><dt>{fact.label}</dt><dd>{fact.value}</dd></div>)}</dl>
       {cover && <figure className="archive-cover"><Photo image={cover.image} sizes="(max-width: 900px) 100vw, 900px" preload /><figcaption>{cover.caption}</figcaption></figure>}
       <section className={`archive-story${cover ? "" : " archive-story--selection"}`} aria-labelledby="archive-story-title">
-        <h2 id="archive-story-title">{cover ? "이 무대의 이야기" : "선정 기록"}</h2>
+        <h2 id="archive-story-title">활동 이야기</h2>
         <div>{entry.paragraphs.map(paragraph => <p key={paragraph}>{paragraph}</p>)}
-          {entry.selection && cover && <p className="archive-date-note">{entry.selection.date.replace("-", ".")}은 선정 시기이며, 실제 공연일을 의미하지 않습니다.</p>}
         </div>
       </section>
       {gallery.length > 0 && <section className="archive-gallery-section" aria-labelledby="archive-gallery-title">
