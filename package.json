@@ -7,7 +7,7 @@
   },
   "scripts": {
     "dev": "next dev -p 8134",
-    "build": "next build",
+    "build": "ARTROAD_STATIC_EXPORT=1 next build",
     "start": "next start -p 8134",
     "typecheck": "tsc --noEmit",
     "lint": "eslint .",
