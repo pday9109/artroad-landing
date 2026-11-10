@@ -77,4 +77,11 @@ npm run build
 - 정적 빌드: `npm run build:static` (`out/` 출력)
 - Sites 배포 설정: `.openai/hosting.json`
 - GitHub에는 사이트 소스와 사용 이미지 사본만 포함합니다. `reference/` 원본과 `docs/` 내부 검토 자료는 Git과 배포에서 제외됩니다.
-- 홈의 아티스트 섹션과 내비게이션에서 별도 소개 페이지로 이동합니다. 현재 수정 사항은 로컬에만 반영하며 추가 배포하지 않습니다.
+- 홈의 아티스트 섹션과 내비게이션에서 별도 소개 페이지로 이동합니다.
+
+## GitHub Pages
+
+- 공개 사이트: `https://pday9109.github.io/artroad-landing/`
+- `main` 브랜치에 변경 사항을 올리면 `.github/workflows/deploy-pages.yml`이 정적 사이트를 빌드하고 GitHub Pages에 배포합니다.
+- Pages 경로를 로컬에서 같은 방식으로 빌드하려면 `NEXT_PUBLIC_ARTROAD_BASE_PATH=/artroad-landing npm run build`를 실행합니다. 기본 로컬 실행과 다른 호스팅에서는 이 변수를 설정하지 않습니다.
+- `out/`, 원본 PDF, 내부 문서는 Git에 포함하지 않습니다.

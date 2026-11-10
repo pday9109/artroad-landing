@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { navigation } from "@/content/site";
 import { Arrow } from "@/components/arrow";
+import { withBasePath } from "@/content/base-path";
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
@@ -39,7 +40,7 @@ export function SiteHeader() {
     <header className="site-header" ref={header}>
       <div className="header-inner container">
         <Link className="brand" href={isHome ? "#top" : "/"} aria-label="아트로드 첫 화면" onClick={() => setOpen(false)}>
-          <Image src="/assets/artroad-logo.webp" alt="" width={47} height={46} />
+          <Image src={withBasePath("/assets/artroad-logo.webp")} alt="" width={47} height={46} />
           <span className="brand-name"><span className="brand-descriptor">문화예술단체</span> 아트로드</span>
         </Link>
         <button ref={toggle} className="menu-toggle" type="button" aria-expanded={open} aria-controls="main-navigation" onClick={() => setOpen(!open)}>
