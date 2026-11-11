@@ -564,17 +564,10 @@ section:focus, main:focus { outline: none; }
 
 /* Partner logos from the introduction PDF, set on the same surface. */
 .partner-strip { border-top: 1px solid #d3d9df; margin-top: 46px; padding-top: 27px; }
-.partner-strip-heading { display: flex; align-items: baseline; gap: 22px; }
 .partner-strip-heading h3 { font-size: 15px; letter-spacing: -.035em; font-weight: 650; }
-.partner-strip-heading p { color: var(--muted); font-size: 11px; line-height: 1.5; margin-top: 5px; word-break: keep-all; }
 .partner-logos { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); align-items: center; gap: 8px 22px; margin-top: 18px; }
-.partner-logos li { display: flex; justify-content: center; align-items: center; min-width: 0; height: 72px; overflow: hidden; }
-.partner-logos img { width: auto; max-width: min(100%, 190px); max-height: 55px; height: auto; object-fit: contain; }
-.partner-logos li:nth-child(1) img { transform: scale(1.28); }
-.partner-logos li:nth-child(2) img { transform: scale(2.15); }
-.partner-logos li:nth-child(3) img { transform: scale(1.25); }
-.partner-logos li:nth-child(4) img { flex-shrink: 0; width: min(100%, 230px); max-width: none; max-height: none; height: auto; }
-.partner-logos li:nth-child(8) img { transform: scale(1.25); }
+.partner-logos li { display: flex; justify-content: center; align-items: center; min-width: 0; height: 88px; }
+.partner-logos img { display: block; flex: none; width: min(100%, var(--logo-width)); max-width: none; height: auto; object-fit: contain; }
 .artist-section-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 25px; }
 .artists-page { padding-top: 38px; padding-bottom: 94px; }
 .artists-page-header { display: grid; grid-template-columns: .95fr 1fr; gap: 68px; align-items: center; padding-block: 68px 74px; }
@@ -606,10 +599,12 @@ section:focus, main:focus { outline: none; }
 }
 @media (max-width: 700px) {
   .partner-strip { margin-top: 36px; padding-top: 22px; }
-  .partner-strip-heading { display: block; }
   .partner-logos { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px 14px; }
-  .partner-logos li { height: 65px; }
-  .partner-logos img { max-width: min(100%, 145px); max-height: 43px; }
+  .partner-logos li { height: 84px; }
+  .partner-logos img { width: min(100%, var(--logo-width), 145px); }
+  .partner-logos li:nth-child(4) img { width: min(48vw, 190px); }
+  .partner-logos li:nth-child(6) img,
+  .partner-logos li:nth-child(8) img { width: min(45vw, 175px); }
   .artist-section-actions { display: block; }
   .artist-section-actions .action-link { margin-top: 12px; }
   .artists-page { padding-top: 25px; padding-bottom: 68px; }

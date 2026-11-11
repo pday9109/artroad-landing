@@ -7,6 +7,7 @@ import { Tagline } from "@/components/tagline";
 import { images, site } from "@/content/site";
 import { partners } from "@/content/partners";
 import Image from "next/image";
+import type { CSSProperties } from "react";
 import { withBasePath } from "@/content/base-path";
 
 export default function Home() {
@@ -53,7 +54,7 @@ export default function Home() {
           </div>
           <section className="partner-strip" aria-labelledby="partners-title">
             <div className="partner-strip-heading"><h3 id="partners-title">협력 파트너</h3></div>
-            <ul className="partner-logos">{partners.map(partner => <li key={partner.name}><Image src={withBasePath(partner.logo)} alt={partner.name} width={partner.width} height={partner.height} sizes="(max-width: 700px) 22vw, 130px" /></li>)}</ul>
+            <ul className="partner-logos">{partners.map(partner => <li key={partner.name} style={{ "--logo-width": `${partner.displayWidth}px` } as CSSProperties}><Image src={withBasePath(partner.logo)} alt={partner.name} width={partner.width} height={partner.height} sizes="(max-width: 700px) 40vw, 230px" /></li>)}</ul>
           </section>
         </div>
       </section>
