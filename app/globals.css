@@ -599,12 +599,17 @@ section:focus, main:focus { outline: none; }
 }
 @media (max-width: 700px) {
   .partner-strip { margin-top: 36px; padding-top: 22px; }
-  .partner-logos { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px 14px; }
+  .partner-logos { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
   .partner-logos li { height: 84px; }
-  .partner-logos img { width: min(100%, var(--logo-width), 145px); }
-  .partner-logos li:nth-child(4) img { width: min(48vw, 190px); }
-  .partner-logos li:nth-child(6) img,
-  .partner-logos li:nth-child(8) img { width: min(45vw, 175px); }
+  .partner-logos img { width: min(88%, var(--mobile-logo-width)); }
+  .partner-logos li:nth-child(1) { --mobile-logo-width: 112px; }
+  .partner-logos li:nth-child(2) { --mobile-logo-width: 116px; }
+  .partner-logos li:nth-child(3) { --mobile-logo-width: 86px; }
+  .partner-logos li:nth-child(4) { --mobile-logo-width: 138px; }
+  .partner-logos li:nth-child(5) { --mobile-logo-width: 108px; }
+  .partner-logos li:nth-child(6) { --mobile-logo-width: 132px; }
+  .partner-logos li:nth-child(7) { --mobile-logo-width: 122px; }
+  .partner-logos li:nth-child(8) { --mobile-logo-width: 138px; }
   .artist-section-actions { display: block; }
   .artist-section-actions .action-link { margin-top: 12px; }
   .artists-page { padding-top: 25px; padding-bottom: 68px; }
