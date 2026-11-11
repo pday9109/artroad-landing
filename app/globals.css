@@ -623,6 +623,7 @@ section:focus, main:focus { outline: none; }
   .artists-directory-grid { grid-template-columns: 1fr; }
   .artist-profile { grid-template-columns: 120px minmax(0, 1fr); gap: 12px 16px; padding-block: 26px; }
   .artist-profile-media { grid-row: auto; }
+  .artist-profile-meta { display: none; }
   .artist-profile-credits { grid-column: 1 / -1; margin-top: 0; }
   .artist-profile-intro h3 { font-size: 30px; }
   .artists-page-contact { display: block; margin-top: 25px; }
